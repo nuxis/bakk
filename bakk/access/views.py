@@ -19,7 +19,7 @@ def cardcheck(request, card):
     data = { 'status': False, }
     badgeaccess = None
 
-    if BadgeAccess.objects.filter(active=True, card=card).exists():
+    if BadgeAccess.objects.filter(active=True, card=card.upper()).exists():
         badgeaccess = BadgeAccess.objects.get(active=True, card=card)
         data['status'] = True
 

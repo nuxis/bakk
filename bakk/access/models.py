@@ -15,6 +15,10 @@ class BadgeAccess(models.Model):
     class Meta:
         unique_together = ('card', 'active')
 
+    def save(self, *args, **kwargs):
+        self.card = self.card.upper()
+        return super(BadgeAccess, self).save(*args, **kwargs)
+
 
 class BadgeAccessLog(models.Model):
     card = models.CharField(max_length=255)
