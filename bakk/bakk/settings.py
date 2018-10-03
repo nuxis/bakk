@@ -122,6 +122,6 @@ STATIC_URL = '/static/'
 
 
 try:
-    from settings_local import *
+    from .settings_local import *
 except ImportError as e:
     print("settings_local failed... {}".format(e))
