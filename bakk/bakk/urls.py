@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from access import views as access_views
+
 urlpatterns = [
+    path('cardcheck/<card>', access_views.cardcheck),
     path('admin/', admin.site.urls),
 ]
